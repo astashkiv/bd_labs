@@ -21,8 +21,8 @@
 4. Переходимо на створений instance і натискаємо SSH
 
 5. Виконуємо почерзі дані команди:
-
-`sudo apt-get install default-jre
+```
+sudo apt-get install default-jre
 sudo apt update
 sudo apt install apt-transport-https
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
@@ -56,7 +56,8 @@ server.port: 5601
 server.host: "0.0.0.0"
 
 sudo service kibana start
-sudo service kibana status`
+sudo service kibana status
+```
 
 6. Для перевірки роботи копіюємо з інформації про instance External IP
 

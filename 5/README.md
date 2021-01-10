@@ -34,11 +34,12 @@
 
 2. Виконуємо запит через Postman. Content-Type – application/json.
 Формат Body:
-
-'{
+```
+{
  "url": "JsonLink",
  "strategy": "eventHub/redis"
-}'
+}
+```
 
 *  JsonLink замінити на необхідне посилання json-файлу
 *  JsonLink замінити на необхідне посилання json-файлу

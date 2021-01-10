@@ -49,8 +49,8 @@
 ![ssh-hd-insight](../img/8-9/13.png)
 
 15. В Python Notebook вставляємо код. Відповідні поля копіюємо з Azure Active Directory -> App registration -> Створений попередньо registartion.
-* Копіюємо Application (client) ID та встаялємо в "fs.azure.account.oauth2.client.id". 
-* В Certificates & secrets копіюємо ID раніше створеного Client secret та вставляємо в "fs.azure.account.oauth2.client.secret".
+* Копіюємо Application (client) ID та встаялємо в ` fs.azure.account.oauth2.client.id ` 
+* В Certificates & secrets копіюємо ID раніше створеного Client secret та вставляємо в ` fs.azure.account.oauth2.client.secret ` 
 * В "fs.azure.account.oauth2.client.endpoint" після https://login.microsoftonline.com/ вставляємо Directory (tenant) ID з вкладки Overview.
 * iotlab8 після @ заміняємо на відповідне ім'я Storage account
 * iotlab8 перед @ заміняємо на відповідне ім'я Container

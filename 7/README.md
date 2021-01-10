@@ -25,19 +25,22 @@
 # Kibana devTools запити
 
 1. Топ-3 за полем map.current_budget.keyword
-'GET _search
+```
+GET _search
 {
 "size": 0,
 "aggs" : {
     "langs" : {
         "terms" : { "field" : "map.current_budget.keyword",  "size" : 3 }
     }
-}}'
+}}
+```
 
 ![ssh-hd-insight](../img/6/6.png)
 
 2. Фільтрація записів за датою
-'GET _search
+```
+GET _search
 {
   "query": {
     "bool": {
@@ -57,6 +60,7 @@
       }
     }
   }
-}'
+}
+```
 
 ![ssh-hd-insight](../img/6/7.png)
