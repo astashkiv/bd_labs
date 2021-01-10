@@ -32,7 +32,7 @@
 
 ![ssh-hd-insight](../img/8-9/9.png)
 
-11. В новостороненому кластері заходимо Libraries –> Install New –> Maven. Coordinates: `com.microsoft.azure:azure-eventhubs-spark_2.12:2.3.18-9`
+11. В новостороненому кластері заходимо Libraries –> Install New –> Maven. Coordinates: ` com.microsoft.azure:azure-eventhubs-spark_2.12:2.3.18-9 `
 
 ![ssh-hd-insight](../img/8-9/10.png)
 
@@ -55,7 +55,8 @@
 * iotlab8 після @ заміняємо на відповідне ім'я Storage account
 * iotlab8 перед @ заміняємо на відповідне ім'я Container
 
-`# Databricks notebook source
+```
+# Databricks notebook source
 configs = {"fs.azure.account.auth.type": "OAuth",
          "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
          "fs.azure.account.oauth2.client.id": "22d8-98-92dd-0ba9-4962-841e-48ff4328d776",
@@ -66,12 +67,14 @@ configs = {"fs.azure.account.auth.type": "OAuth",
 dbutils.fs.mount(
         source = "abfss://iotlab8@iotlab8.dfs.core.windows.net",
         mount_point = "/mnt/labs",
-        extra_configs = configs)`
+        extra_configs = configs)
+```        
 
 ![ssh-hd-insight](../img/8-9/14.png)
 
 16. В Scale Notebook вставляємо код і агалогічно з попереднім пунктом заміняємо поля на актуальні і запускаємо код.
-`import org.apache.spark.eventhubs.{ ConnectionStringBuilder, EventHubsConf, EventPosition }
+```
+import org.apache.spark.eventhubs.{ ConnectionStringBuilder, EventHubsConf, EventPosition }
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.functions._
 
@@ -109,7 +112,8 @@ filtered.writeStream
   .format("com.databricks.spark.csv")
   .outputMode("append")
   .option("checkpointLocation", "/mnt/labs/iotlab8")
-  .start("/mnt/labs/iotlab8")`
+  .start("/mnt/labs/iotlab8")
+```  
 
   ![ssh-hd-insight](../img/8-9/15.png)
 
