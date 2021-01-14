@@ -20,13 +20,17 @@
 
 ![ssh-hd-insight](../img/5/4.png)
 
-# Кастомізація проекту
+# Запуск проекту
 
-1. В папці Service в файлі SendDataConsoleImpl.java заміняємо CACHE_HOSTNAME, CACHE_KEY на відповідні дані з Azure.
+1. Встановлюємо Go на комп'ютер, якщо його ще немає – https://golang.org/doc/install?download=go1.15.6.darwin-amd64.pkg
 
-2. В папці Service в файлі SendDataEventHubImpl.java заміняємо CACHE_HOSTNAME, CACHE_KEY, namespace, hub name, Connection string–primary key, Primary key на відповідні з Azure.
+2. В файлі go.main заміняємо дані на свої з Azure
+* eventHubConnStr – Connection string–primary key вашого EventHub
+* redisAddr – адресу Azure Cache for Redis
+* redisPass – Primary
 
-3. Build проекту
+3. Run проекту ` go run main.go `
+
 
 # Запис даних
 
@@ -45,6 +49,12 @@
 *  JsonLink замінити на необхідне посилання json-файлу
 
 ![ssh-hd-insight](../img/5/5.png)
+
+Для EventHub:
+![ssh-hd-insight](../img/5/51.png)
+
+Для Redis:
+![ssh-hd-insight](../img/5/51.png)
 
 3. Перевіряємо чи дані записались в Event Hub.
 В Azure вибираємо створений Event Hub -> Features –> Proccess Data –> Explore
